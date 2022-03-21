@@ -14,6 +14,11 @@ public class RomanNumerals {
 
         System.out.print("Please enter a Roman Numeral ");
         String numeral = scanner.nextLine();
+        while (convertToNumber(numeral) == 0) {
+            System.out.println(numeral + " Is not a valid Roman Numeral");
+            System.out.print("Please enter a Roman Numeral ");
+            numeral = scanner.nextLine();
+        }
         System.out.println(convertToNumber(numeral));
 
         scanner.close();

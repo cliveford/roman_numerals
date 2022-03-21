@@ -55,12 +55,27 @@ class RomanNumeralsTest {
     }
 
     @Test
-    void checkThatNumbersReturn0() {
-        assertEquals(0, RomanNumerals.convertToNumber("99"));
+    void checkThatLowercaseXConvertsTo0() {
+        assertEquals(0, RomanNumerals.convertToNumber("x"));
     }
 
     @Test
-    void checkThatNonRomanNumeralsReturn0() {
-        assertEquals(0, RomanNumerals.convertToNumber("xyz"));
+    void checkThatLowercaseIAndUppercaseXConvertTo0() {
+        assertEquals(0, RomanNumerals.convertToNumber("iX"));
+    }
+
+    @Test
+    void checkThatNumberConvertsTo0() {
+        assertEquals(0, RomanNumerals.convertToNumber("9"));
+    }
+
+    @Test
+    void checkThatMultipleNumbersConvertTo0() {
+        assertEquals(0, RomanNumerals.convertToNumber("92680"));
+    }
+
+    @Test
+    void checkThatMultipleMixedCaseLettersConvertTo0() {
+        assertEquals(0, RomanNumerals.convertToNumber("xVz"));
     }
 }
