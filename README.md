@@ -30,6 +30,7 @@ To run unit tests in gui
 2) right click on src/test/java/RomanNumeralsTest.java and select Run 'RomanNumeralsTest'
 
 User Acceptance criteria:
+
 GIVEN
 The user starts the console application and is prompted with the message Please enter a Roman Numeral.
 
