@@ -1,8 +1,26 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class RomanNumeralsTest {
+
+    @ParameterizedTest
+    @ValueSource(strings = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" })
+    void checkThatRomanNumeralsConvertToANumberBetween1And10(String input) {
+        int number = RomanNumerals.convertToNumber(input);
+        assertTrue(number >=1 && number <=10);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"I,1", "II,2", "III,3", "IV,4", "V,5", "VI,6", "VII,7", "VIII,8", "IX,9", "X,10"})
+     void checkThatRomanNumeralsConvertToCorrectNumber(String input, String expected) {
+        String number = Integer.toString(RomanNumerals.convertToNumber(input));
+        assertEquals(expected, number);
+    }
 
     @Test
     void checkThatIConvertsTo1() {
